@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Category.delete_all
+ActiveRecord::Base.connection.reset_pk_sequence!(Category.table_name)
+categories = %w(games education business lifestyle entertainment utilities travel books music productivity health sports photo news finance food medical social_networking navigation)
+categories.each do |category_name|
+  Category.find_or_create_by(name: category_name)
+end
