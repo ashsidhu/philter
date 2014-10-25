@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "pages#welcome"
   get 'products/new'
 
   get 'products/create'
