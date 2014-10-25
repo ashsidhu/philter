@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get 'products/index'
+
   root to: "pages#home"
   get 'products/new'
 
   get 'products/create'
 
   get 'pages/home'
+  resources :products, only: [:index]
     namespace :api do
       namespace :v1 do
         #products#index - admin dashboard summary
