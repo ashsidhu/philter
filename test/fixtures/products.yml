@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  tagline: MyString
+  product_type: 1
+  product_url: MyString
+  user_id: 1
+  category_id: 1
+  linked_in_url: MyString
+  crunchbase_url: MyString
+  location: MyString
+  screenshot_url: MyString
+  approved: false
+
+two:
+  name: MyString
+  tagline: MyString
+  product_type: 1
+  product_url: MyString
+  user_id: 1
+  category_id: 1
+  linked_in_url: MyString
+  crunchbase_url: MyString
+  location: MyString
+  screenshot_url: MyString
+  approved: false
