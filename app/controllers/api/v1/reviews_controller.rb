@@ -1,7 +1,7 @@
 class Api::V1::ReviewsController < ApplicationController
   def create
     user_id = signed_in? ? current_user.id : "1"
-    @review = Review(params[:review].merge!(user_id: user_id))
+    @review = Review.create(params[:review].merge!(user_id: user_id))
     if @review.save
       render json: { success: true }
     else

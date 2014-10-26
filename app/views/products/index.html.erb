@@ -97,26 +97,42 @@
 
 var post_review = function(e) {
 	console.log(e);
+
+	if ($(e.currentTarget).hasClass('reject-button')) {
+		$.post('/api/v1/products/'+$('body').data('product_id')+'/reviews', {review: {liked: 0}});
+
+	} else {
+		$.post('/api/v1/products/'+$('body').data('product_id')+'/reviews', {review: {liked: 1}});
+
+	}
+
+	render_product();
 };
 
 $(document).ready(function() {
 	$('.ph-button').click(post_review);
 	render_dom(data[0]);
+	data.splice(0, 1);
 });
 
 var render_product = function(id) {
-	for (var i = data.length - 1; i >= 0; i--) {
-		var product = data[i];
-		if (product.id === id) {
-			var selected_id = id;
-			break;
-		}
-	};
-	if (!selected_id) {
-		return;
+	if (!data.length) {
+		$('.product-properties').text('All Done');
+	}
+	// for (var i = data.length - 1; i >= 0; i--) {
+	// 	var product = data[i];
+	// 	if (product.id === id) {
+	// 		var selected_id = id;
+	// 		break;
+	// 	}
+	// };
+
+	if (true) {
+		render_dom(data[0]);
 	} else {
 		render_dom(product);
 	}
+	data.splice(0, 1);
 };
 
 var render_dom = function (product) {
@@ -133,7 +149,7 @@ var render_dom = function (product) {
 	var team = $('.team-member');
 	team.find('.linkedin').html('<a href="' + product.linked_in_url + '"> Founder Linkedin </a>');
 	team.find('.crunchbase').html('<a href="' + product.crunchbase_url + '"> Founder Crunchbase </a>');
-
+	$('body').data('product_id', + product.id);
 }
 
 </script>
