@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   post 'products/new' =>'products#new'
+  get 'products/new' =>'products#new'
 
   get 'pages/home'
     namespace :api do
