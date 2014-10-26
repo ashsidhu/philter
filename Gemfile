@@ -10,8 +10,8 @@ gem 'newrelic_rpm'
 gem 'clearance'
 gem 'httparty'
 gem 'byebug' #debugger incompatible with Ruby 2
-# Use SCSS for stylesheets
-# gem 'sass-rails', '~> 4.0.3'
+gem 'active_model_serializers'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
