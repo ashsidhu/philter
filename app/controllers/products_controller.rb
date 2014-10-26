@@ -10,7 +10,15 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @new_product = Product.create(params[:products])
-    # binding.pry
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.new(params[:product])
+    if @product.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 end

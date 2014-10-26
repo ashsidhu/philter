@@ -1,14 +1,18 @@
 <h1>Products#new</h1>
 
-<%= form_for :products do |f| %>
-  Product Name: <%= f.text_field :name, :placeholder =>"Product Hunt" %><br />
-  Tagline: <%= f.text_field :tagline, :placeholder =>"The best new products, every day" %><br />
-  Product Type: <%= f.select :product_type, [['iOS', 1],['Android', 2],['Web', 3],['Hardware', 4]] %><br />
-  Product URL: <%= f.text_field :product_url, :placeholder =>"http://www.producthunt.com/"  %><br />
-  Founder Linkedin <%= f.text_field :linked_in_url, :placeholder =>"http://www.linkedin.com/in/ryanrhoover" %><br />
-  Organization Crunchbase: <%= f.text_field :crunchbase_url, :placeholder =>"http://www.crunchbase.com/organization/product-hunt" %><br />
-  Team Location: <%= f.text_field :location, :placeholder =>"San Francisco, CA"%><br />
-  Screenshot URL: <%= f.text_field :screenshot_url %><br />
 
- <%= f.submit "Submit to PH" %>
+<div class="product-submit-form">
+<%= form_for :products do |f| %>
+  <div class="form-elem">Product Name:  <br /><%= f.text_field :name, :placeholder =>"Product Hunt" %><br /></div>
+
+  <div class="form-elem">Tagline: <br /><%= f.text_field :tagline, :placeholder =>"The best new products, every day" %><br /></div>
+  <div class="form-elem">Product Type: <br /><%= f.select :product_type, [['iOS', 1],['Android', 2],['Web', 3],['Hardware', 4]] %><br /></div>
+  <div class="form-elem">Product URL: <br /><%= f.text_field :product_url, :placeholder =>"http://www.producthunt.com/"  %><br /></div>
+  <div class="form-elem">Founder Linkedin <br /><%= f.text_field :linked_in_url, :placeholder =>"http://www.linkedin.com/in/ryanrhoover" %><br /></div>
+  <div class="form-elem">Organization Crunchbase: <br /><%= f.text_field :crunchbase_url, :placeholder =>"http://www.crunchbase.com/organization/product-hunt" %><br /></div>
+  <div class="form-elem">Team Location: <br /><%= f.text_field :location, :placeholder =>"San Francisco, CA"%><br /></div>
+  <div class="form-elem">Screenshot URL: <br /><%= f.text_field :screenshot_url, :placeholder => "http://i.imgur.com/KkWFxl5.png" %><br /></div>
+
+ <%= f.submit "Submit to Product Hunt" %>
 <% end %>
+</div>
