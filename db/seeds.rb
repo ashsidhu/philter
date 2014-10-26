@@ -12,3 +12,11 @@ categories = %w(games education business lifestyle entertainment utilities trave
 categories.each do |category_name|
   Category.find_or_create_by(name: category_name)
 end
+
+json_data = open("lib/assets/product_seed_data.txt").first
+rubified_data = JSON.parse(json_data, symbolize_names: true)
+posts = rubified_data[:posts]
+posts.each do |post|
+  puts post[:name]
+  puts post[:tagline]
+end
