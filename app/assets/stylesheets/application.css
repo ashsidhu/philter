@@ -104,3 +104,15 @@ button.btn.btn-default.navbar-btn {
   margin-right: 24px;
 }
 
+.ph-product-link {
+  display: block;
+  margin-bottom: 24px;
+  margin-left: 20px;
+}
+
+.ph-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+

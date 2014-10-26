@@ -1,5 +1,7 @@
-<ul>
+
 <%- @products.each do | product | %>
-  <li><%= product.name %>: <%= product.tagline %></li>
+  
+
+  <a class="ph-product-link" href="<%= product.product_url || "http://producthunt.com"%>"><div class="ph-name"><%= product.name %></div><div class="ph-tagline"><%= product.tagline %></div></a>
 <% end %>
-</ul>
+
