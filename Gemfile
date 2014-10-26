@@ -7,8 +7,11 @@ gem 'rails', '4.1.4'
 gem 'pg'
 gem 'sendgrid'
 gem 'newrelic_rpm'
-# Use SCSS for stylesheets
-# gem 'sass-rails', '~> 4.0.3'
+gem 'clearance'
+gem 'httparty'
+gem 'byebug' #debugger incompatible with Ruby 2
+gem 'active_model_serializers'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -30,6 +33,8 @@ gem 'spring',        group: :development
 
 gem 'haml'
 gem 'bootstrap-sass'
+gem 'pry'
+gem 'protected_attributes'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

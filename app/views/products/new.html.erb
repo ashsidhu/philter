@@ -1,2 +1,14 @@
 <h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+
+<%= form_for :products do |f| %>
+  Product Name: <%= f.text_field :name, :placeholder =>"Product Hunt" %><br />
+  Tagline: <%= f.text_field :tagline, :placeholder =>"The best new products, every day" %><br />
+  Product Type: <%= f.select :product_type, [['iOS', 1],['Android', 2],['Web', 3],['Hardware', 4]] %><br />
+  Product URL: <%= f.text_field :product_url, :placeholder =>"http://www.producthunt.com/"  %><br />
+  Founder Linkedin <%= f.text_field :linked_in_url, :placeholder =>"http://www.linkedin.com/in/ryanrhoover" %><br />
+  Organization Crunchbase: <%= f.text_field :crunchbase_url, :placeholder =>"http://www.crunchbase.com/organization/product-hunt" %><br />
+  Team Location: <%= f.text_field :location, :placeholder =>"San Francisco, CA"%><br />
+  Screenshot URL: <%= f.text_field :screenshot_url %><br />
+
+ <%= f.submit "Submit to PH" %>
+<% end %>
