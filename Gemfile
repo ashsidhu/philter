@@ -33,6 +33,8 @@ gem 'spring',        group: :development
 
 gem 'haml'
 gem 'bootstrap-sass'
+gem 'pry'
+gem 'protected_attributes'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
