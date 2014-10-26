@@ -1,8 +1,5 @@
-<h1>Products#new</h1>
-
-
 <div class="product-submit-form">
-<%= form_for :products do |f| %>
+<%= form_for :product do |f| %>
   <div class="form-elem">Product Name:  <br /><%= f.text_field :name, :placeholder =>"Product Hunt" %><br /></div>
 
   <div class="form-elem">Tagline: <br /><%= f.text_field :tagline, :placeholder =>"The best new products, every day" %><br /></div>

@@ -5,14 +5,23 @@
   <%= stylesheet_link_tag "application.css", :media => "all" %>
   <%= csrf_meta_tag %>
 </head>
-<body>
-  <div id="header">
+
+<header>
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><img src="/images/logos.png" alt="" style="width: 23%;"></a>
+  <button type="button" class="btn btn-default navbar-btn">
     <% if signed_in? -%>
       <%= button_to t('.sign_out'), sign_out_path, :method => :delete %>
     <% else -%>
       <%= link_to t('.sign_in'), sign_in_path %>
     <% end -%>
+  </button>
   </div>
+  </div>
+  </nav>
 
   <div id="flash">
     <% flash.each do |key, value| -%>
@@ -21,5 +30,10 @@
   </div>
 
   <%= yield %>
+</header>
+
+<footer>
+
+  <body>
 </body>
 </html>

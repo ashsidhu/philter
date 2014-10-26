@@ -10,8 +10,10 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
-
+    @product = Product.new(params[:product])
+    if @product.save
+      redirect_to "/products"
+    end
   end
 
   def create
