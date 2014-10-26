@@ -43,3 +43,59 @@
   text-transform: uppercase;
   font-size: 20px;
 }
+
+.product-properties {
+  max-width: 970px;
+  width: 60%;
+  margin: 0 auto;
+}
+@media all and (max-width: 699px) {
+  .product-properties {
+    width: auto;
+  }
+}
+
+.product-container {
+  position: relative;
+}
+
+.ph-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 20%;
+  background: red;
+  color: white;
+  FONT-SIZE: 32px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ph-button.approve-button {
+  left:auto;
+  right: 0;
+  background: green;
+}
+
+@media all and (max-width: 699px) {
+  .ph-button {
+    position: fixed;
+    width: 50%;
+    z-index: 1;
+    top: auto;
+    height: 60px;
+  }  
+}
+
+.team-member {
+  margin-right: 24px;
+}
+
+.team-info-label {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 24px;
+}
