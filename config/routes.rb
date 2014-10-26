@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     end
   end
   resources :products, only: [:index, :new, :create]
-
     namespace :api do
       namespace :v1 do
         #products#index - admin dashboard summary
