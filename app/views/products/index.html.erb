@@ -32,9 +32,10 @@
 				<div class="app-logo">
 					<img src="http://a2.mzstatic.com/us/r30/Purple1/v4/8c/9e/bf/8c9ebffa-c820-9dcf-e73c-21069cd94cb1/icon200x200.jpeg" alt="">
 				</div>
-				<div class="app-name"></div>
+				<div class="app-name">YOLO</div>
 			</div>
 			<div class="info-container">
+				<div class="tagline"></div>
 				<div class="category info-div">
 					<span class="">Category:</span>
 					Music
@@ -43,18 +44,18 @@
 					<span class="">Platform:</span>
 					iOS
 				</div>
-				<div class="accelerator info-div">
+				<!-- <div class="accelerator info-div">
 					<span class="">Accelerator:</span>
 					link
-				</div>
+				</div> -->
 				<div class="link info-div">
 					<span class="">Link:</span>
 					link
 				</div>
-				<div class="app-store-link info-div">
+				<!-- <div class="app-store-link info-div">
 					<span class="">App Store:</span>
 					app_store_link
-				</div>
+				</div> -->
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -69,12 +70,12 @@
 				<div class="linkedin member-detail">Linkedin</div>
 				<div class="crunchbase member-detail">Crunchbase</div>
 			</div>
-			<div class="team-member pull-left">
+<!-- 			<div class="team-member pull-left">
 				<div class="name member-detail">Makarma Berserk</div>
 				<div class="designation member-detail">CTO</div>
 				<div class="linkedin member-detail">Linkedin</div>
 				<div class="crunchbase member-detail">Crunchbase</div>
-			</div>
+			</div> -->
 			<div class="clearfix"></div>
 		</div>
 		<!-- team info finish -->
@@ -84,4 +85,56 @@
 
 </div>
 <!-- product container finish -->
+
+<!-- JS containing templating and data -->
+<script type="text/javascript" id="products-data">
+	window.data = <%= Product.all.to_json.html_safe %>
+	
+</script>
+
+<!-- button post review -->
+<script type="text/javascript">
+
+var post_review = function(e) {
+	console.log(e);
+};
+
+$(document).ready(function() {
+	$('.ph-button').click(post_review);
+	render_dom(data[0]);
+});
+
+var render_product = function(id) {
+	for (var i = data.length - 1; i >= 0; i--) {
+		var product = data[i];
+		if (product.id === id) {
+			var selected_id = id;
+			break;
+		}
+	};
+	if (!selected_id) {
+		return;
+	} else {
+		render_dom(product);
+	}
+};
+
+var render_dom = function (product) {
+	$('.screenshots').find('img').attr('src', product.screenshot_url);
+	// $('.app-logo').find('img').attr('src', product.product_logo);
+	
+	var info = $('.app-info');
+	info.find('.app-name').text(product.name);
+	info.find('.tagline').text(product.tagline);
+	info.find('.category').text('Category: ' + product.category_id);
+	info.find('.platform').text('Platform: ' + product.product_type);
+	info.find('.link').html('<a href="' + product.product_url + '"> Product Link </a>');
+
+	var team = $('.team-member');
+	team.find('.linkedin').html('<a href="' + product.linked_in_url + '"> Founder Linkedin </a>');
+	team.find('.crunchbase').html('<a href="' + product.crunchbase_url + '"> Founder Crunchbase </a>');
+
+}
+
+</script>
 
