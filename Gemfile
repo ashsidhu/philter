@@ -8,6 +8,8 @@ gem 'pg'
 gem 'sendgrid'
 gem 'newrelic_rpm'
 gem 'clearance'
+gem 'httparty'
+gem 'byebug' #debugger incompatible with Ruby 2
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

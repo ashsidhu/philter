@@ -13,10 +13,22 @@ categories.each do |category_name|
   Category.find_or_create_by(name: category_name)
 end
 
-json_data = open("lib/assets/product_seed_data.txt").first
-rubified_data = JSON.parse(json_data, symbolize_names: true)
-posts = rubified_data[:posts]
-posts.each do |post|
-  puts post[:name]
-  puts post[:tagline]
+developer_token = "71726e638c1ff0d9989da4fee0e2029a8a452ae7bf93edfa3f1eb962e5fed0cd"
+post_names = []
+(0..10).each do |days_ago|
+  product_api_url = "https://api.producthunt.com/v1/posts?access_token=#{developer_token}&days_ago=#{days_ago.to_s}"
+  response = HTTParty.get(product_api_url)
+  response["posts"].each do |post|
+    post_names << post["name"]
+    id = post["id"]
+    name = post["name"]
+    tagline =  post["tagline"]
+    created_at = DateTime.strptime(post["created_at"].split(".")[0],'%Y-%m-%dT%H:%M:%S')
+    screenshot_url = post["screenshot_url"]["850px"].truncate(255)
+    begin
+      Product.create(id: id, name: name, tagline: tagline, created_at: created_at, screenshot_url: screenshot_url, approved: 1)
+    rescue => e
+      puts "#{e} \n"
+    end
+  end
 end
