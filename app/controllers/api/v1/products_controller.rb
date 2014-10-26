@@ -7,5 +7,11 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def create
+    @product = Product.new(params[:product])
+    if @product.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 end

@@ -1,6 +1,6 @@
 <h1>Products#new</h1>
 
-<%= form_for :products do |f| %>
+<%= form_for @product do |f| %>
   Product Name: <%= f.text_field :name, :placeholder =>"Product Hunt" %><br />
   Tagline: <%= f.text_field :tagline, :placeholder =>"The best new products, every day" %><br />
   Product Type: <%= f.select :product_type, [['iOS', 1],['Android', 2],['Web', 3],['Hardware', 4]] %><br />

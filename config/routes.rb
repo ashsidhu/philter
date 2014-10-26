@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     get 'products/create'
     end
   end
-  resources :products, only: [:index, :new]
+  resources :products, only: [:index, :new, :create]
 
     namespace :api do
       namespace :v1 do
