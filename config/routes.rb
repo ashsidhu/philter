@@ -10,20 +10,16 @@ Rails.application.routes.draw do
     get 'products/show'
     end
   end
+  root to: "pages#home"
+  get 'pages/home'
 
   namespace :api do
   namespace :v1 do
     get 'products/create'
     end
   end
+  resources :products, only: [:index, :new]
 
-  get 'products/index'
-
-  root to: "pages#home"
-
-  post 'products/new' =>'products#new'
-
-  get 'pages/home'
     namespace :api do
       namespace :v1 do
         #products#index - admin dashboard summary
