@@ -42,6 +42,15 @@ end
 
 
 Product.create([
-  {name: "Product Hunt", tagline: "The best new products, every day", product_url: "http://www.producthunt.com/", linked_in_url: "http://www.linkedin.com/in/ryanrhoover", crunchbase_url: "http://www.crunchbase.com/organization/product-hunt", location:"San Francisco, CA", screenshot_url:"http://i.imgur.com/KkWFxl5.png"}
+  {name: "Product Hunt", tagline: "The best new products, every day", product_url: "http://www.producthunt.com/", linked_in_url: "http://www.linkedin.com/in/ryanrhoover", crunchbase_url: "http://www.crunchbase.com/organization/product-hunt", location:"San Francisco, CA", screenshot_url:"http://i.imgur.com/KkWFxl5.png", product_logo:"http://i.imgur.com/w9iAxEd.png"},
+  {name: "Facebook", tagline: "Social utility that connects people with friends", product_url: "http://www.facebook.com/", linked_in_url: "", crunchbase_url: "http://www.crunchbase.com/", location:"", screenshot_url:"http://i.imgur.com/KkWFxl5.png", product_logo:""},
+  {name: "Twitter", tagline: "Connect with your friends", product_url: "http://www.twitter.com/", linked_in_url: "https://www.linkedin.com/", crunchbase_url: "http://www.crunchbase.com/", location:"", screenshot_url:"http://i.imgur.com/KkWFxl5.png", product_logo:""},
+  {name: "Sendgrid", tagline: "World's largest Email Infrastructure as a Service provider", product_url: "http://www.sendgrid.com/", linked_in_url: "https://www.linkedin.com/", crunchbase_url: "http://www.crunchbase.com/", location:"", screenshot_url:"http://i.imgur.com/KkWFxl5.png", product_logo:""},
+  {name: "Apple", tagline: "Creates the iPhone, iPad, Mac notebooks and desktop computers", product_url: "http://www.apple.com/", linked_in_url: "https://www.linkedin.com/", crunchbase_url: "http://www.crunchbase.com/", location:"", screenshot_url:"http://i.imgur.com/KkWFxl5.png", product_logo:""},
+  {name: "Reddit", tagline: "User-generated news links", product_url: "http://www.reddit.com/", linked_in_url: "https://www.linkedin.com/", crunchbase_url: "http://www.crunchbase.com/", location:"", screenshot_url:"http://i.imgur.com/KkWFxl5.png", product_logo:""},
+  {name: "YC Combinator", tagline: "Created a new model for funding early stage startups", product_url: "http://www.ycombinator.com/", linked_in_url: "https://www.linkedin.com/", crunchbase_url: "http://www.crunchbase.com/", location:"", screenshot_url:"http://i.imgur.com/KkWFxl5.png", product_logo:""},
+  {name: "Firefox", tagline: "Free Web browser", product_url: "http://www.firefox.com/", linked_in_url: "https://www.linkedin.com/", crunchbase_url: "http://www.crunchbase.com/", location:"", screenshot_url:"http://i.imgur.com/KkWFxl5.png", product_logo:""},
+  {name: "Google", tagline: "Search the world's information", product_url: "http://www.google.com/", linked_in_url: "https://www.linkedin.com/", crunchbase_url: "http://www.crunchbase.com/", location:"", screenshot_url:"http://i.imgur.com/KkWFxl5.png", product_logo:""},
+  {name: "Yahoo", tagline: "Discover the news and information", product_url: "http://www.yahoo.com/", linked_in_url: "https://www.linkedin.com/", crunchbase_url: "http://www.crunchbase.com/", location:"", screenshot_url:"http://i.imgur.com/KkWFxl5.png", product_logo:""}
 ])
 

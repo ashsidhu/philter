@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   post 'products/new' =>'products#new'
   get 'products/new' =>'products#new'
+  get '/founder' =>'products#show'
 
 
   get 'pages/home'
