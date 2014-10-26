@@ -1,8 +1,10 @@
 class Api::V1::ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
+
     respond_to do |format|
-      format.json { render json: @product }
+        format.json { render :json => @product.to_json }
+        format.html { render :json => @product.to_json }
     end
   end
 
