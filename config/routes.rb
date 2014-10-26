@@ -1,15 +1,5 @@
 Rails.application.routes.draw do
-  namespace :api do
-  namespace :v1 do
-    get 'reviews/create'
-    end
-  end
 
-  namespace :api do
-  namespace :v1 do
-    get 'products/show'
-    end
-  end
   root to: "pages#home"
   get 'pages/home'
 
