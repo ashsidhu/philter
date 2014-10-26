@@ -41,3 +41,7 @@ open("lib/assets/user_seed_data.txt").each do |line|
 end
 
 
+Product.create([
+  {name: "Product Hunt", tagline: "The best new products, every day", product_url: "http://www.producthunt.com/", linked_in_url: "http://www.linkedin.com/in/ryanrhoover", crunchbase_url: "http://www.crunchbase.com/organization/product-hunt", location:"San Francisco, CA", screenshot_url:"http://i.imgur.com/KkWFxl5.png"}
+])
+
